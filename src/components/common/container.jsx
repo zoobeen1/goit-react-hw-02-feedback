@@ -7,7 +7,9 @@ export const Container = p => {
       borderRadius="normal"
       mt={5}
       mx="auto"
+      p={3}
       boxShadow="normal"
+      bg="background"
     >
       {p.children}
     </Box>
