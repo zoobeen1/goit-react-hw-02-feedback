@@ -2,13 +2,13 @@ import { Box } from '../common/Box';
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return options.map(option => (
     <Box
-      key={option.text}
+      key={option}
       as="button"
       mr="5px"
       p={2}
-      onClick={() => onLeaveFeedback(option.text)}
+      onClick={() => onLeaveFeedback(option)}
     >
-      {option.text}
+      {option}
     </Box>
   ));
 };

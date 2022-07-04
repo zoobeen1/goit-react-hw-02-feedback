@@ -9,15 +9,15 @@ export class App extends Component {
     neutral: 0,
     bad: 0,
   };
-  handleGoodClick = () => {
-    this.setState(prevValue => ({ good: prevValue.good + 1 }));
-  };
-  handleNeutralClick = () => {
-    this.setState(prevValue => ({ neutral: prevValue.neutral + 1 }));
-  };
-  handleBadClick = () => {
-    this.setState(prevValue => ({ bad: prevValue.bad + 1 }));
-  };
+  // handleGoodClick = () => {
+  //   this.setState(prevValue => ({ good: prevValue.good + 1 }));
+  // };
+  // handleNeutralClick = () => {
+  //   this.setState(prevValue => ({ neutral: prevValue.neutral + 1 }));
+  // };
+  // handleBadClick = () => {
+  //   this.setState(prevValue => ({ bad: prevValue.bad + 1 }));
+  // };
   countTotalFeedback = () => {
     return this.state.good + this.state.neutral + this.state.bad;
   };
@@ -25,43 +25,31 @@ export class App extends Component {
     return Math.round((this.state.good / this.countTotalFeedback()) * 100);
   };
   onLeaveFeedback = option => {
-    switch (option) {
-      case 'Good':
-        console.log('good');
-        this.handleGoodClick();
-        break;
-      case 'Neutral':
-        console.log('neutral');
-        this.handleNeutralClick();
-        break;
-      case 'Bad':
-        console.log('bad');
-        this.handleBadClick();
-        break;
-      default:
-        console.log('default');
-        break;
-    }
+    this.setState(prevValue => ({
+      [option]: prevValue[option] + 1,
+    }));
+    // switch (option) {
+    //   case 'Good':
+    //     this.handleGoodClick();
+    //     break;
+    //   case 'Neutral':
+    //     this.handleNeutralClick();
+    //     break;
+    //   case 'Bad':
+    //     this.handleBadClick();
+    //     break;
+    //   default:
+    //     console.log('default');
+    //     break;
+    // }
   };
-
-  options = [
-    {
-      text: 'Good',
-    },
-    {
-      text: 'Neutral',
-    },
-    {
-      text: 'Bad',
-    },
-  ];
 
   render() {
     return (
       <Container>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options={this.options}
+            options={['Good', 'Neutral', 'Bad']}
             onLeaveFeedback={this.onLeaveFeedback}
           />
         </Section>
