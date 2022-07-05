@@ -3,6 +3,7 @@ import { Statistics } from 'components/Statistics';
 import { Container, Section } from 'components/common';
 import { FeedbackOptions } from 'components/FeedbackOptions';
 import { NotificationMassage } from 'components/NotificationMassage';
+
 export class App extends Component {
   state = {
     Good: 0,
@@ -13,9 +14,11 @@ export class App extends Component {
   countTotalFeedback = () => {
     return this.state.Good + this.state.Neutral + this.state.Bad;
   };
+
   countPositiveFeedbackPercentage = () => {
     return Math.round((this.state.Good / this.countTotalFeedback()) * 100);
   };
+
   onLeaveFeedback = option => {
     this.setState(prevValue => ({
       [option]: prevValue[option] + 1,
@@ -26,6 +29,7 @@ export class App extends Component {
     const { Good, Neutral, Bad } = this.state;
     const totalFeedback = this.countTotalFeedback();
     const stateKeys = Object.keys(this.state);
+
     return (
       <Container>
         <Section title="Please leave feedback">
