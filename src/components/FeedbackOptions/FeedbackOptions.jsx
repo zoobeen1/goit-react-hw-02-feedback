@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Box } from '../common/Box';
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return options.map(option => (
@@ -11,4 +12,8 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
       {option}
     </Box>
   ));
+};
+FeedbackOptions.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
 };
