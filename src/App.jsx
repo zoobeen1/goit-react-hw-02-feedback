@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Statistics } from 'components/statistics';
+import { Statistics } from 'components/1tatistics';
 import { Container, Section } from 'components/common';
 import { FeedbackOptions } from 'components/FeedbackOptions';
 import { NotificationMassage } from 'components/NotificationMassage';
