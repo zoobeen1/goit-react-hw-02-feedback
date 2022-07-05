@@ -1,3 +1,3 @@
 export { Box } from './Box';
-export { Container } from './container';
-export { Section } from './section';
+export { Container } from './1ontainer';
+export { Section } from './1ection';
