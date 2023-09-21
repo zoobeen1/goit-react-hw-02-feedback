@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Box } from '../common/Box';
+import { Box } from 'components/common';
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return options.map(option => (
     <Box

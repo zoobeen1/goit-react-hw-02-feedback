@@ -1,5 +1,5 @@
-import { Box } from './Box';
-export const Container = p => {
+import { Box } from './Box-styled';
+export const Container = ({ children }) => {
   return (
     <Box
       width="small"
@@ -11,7 +11,7 @@ export const Container = p => {
       boxShadow="normal"
       bg="background"
     >
-      {p.children}
+      {children}
     </Box>
   );
 };
